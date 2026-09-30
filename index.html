@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Revisa y comparte ofertas de Mercado Libre México.">
+    <meta name="theme-color" content="#0b7055">
+    <title>Ofertas al Día | Panel de afiliados</title>
+    <link rel="stylesheet" href="/assets/styles.css">
+    <script src="/assets/app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark"><span>O</span><span>✓</span></div>
+        <div><strong>Ofertas al Día</strong><small>Panel de afiliados</small></div>
+      </div>
+      <div class="top-actions">
+        <span class="status"><i></i> Buscador activo</span>
+        <button class="avatar" aria-label="Cuenta de administrador">MA</button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <div id="demo-banner" class="demo-banner" hidden>
+        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2 1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6Z"></path></svg>
+        <span><strong>Modo demostración.</strong> Conecta la base de datos para conservar los cambios y activar el buscador 24/7.</span>
+      </div>
+      <div id="notice" class="notice" role="alert" hidden><span></span><button type="button" aria-label="Cerrar">×</button></div>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">CENTRO DE CONTROL</p>
+          <h1>Tus ofertas, listas<br>para compartir.</h1>
+          <p>Revisa lo que encontramos, añade tu enlace y envíalo a tu comunidad.</p>
+        </div>
+        <div class="scan-card">
+          <span class="pulse"><i></i><i></i><i></i></span>
+          <div><strong>Próximo escaneo</strong><span>Cada 3 horas · México</span></div>
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Resumen">
+        <article><span>Pendientes</span><strong id="pending-count">—</strong><small><i class="yellow"></i> Requieren tu atención</small></article>
+        <article><span>Enviadas</span><strong id="sent-count">—</strong><small><i class="green"></i> Publicaciones realizadas</small></article>
+        <article><span>Descuento promedio</span><strong id="average-discount">—</strong><small><i class="blue"></i> En ofertas detectadas</small></article>
+      </section>
+
+      <section class="content-head">
+        <nav class="tabs" aria-label="Estado de las ofertas">
+          <button class="active" data-tab="pending" type="button">Por revisar <b id="pending-badge">0</b></button>
+          <button data-tab="sent" type="button">Enviadas</button>
+          <button data-tab="rejected" type="button">Descartadas</button>
+        </nav>
+        <label class="search">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path></svg>
+          <input id="search" type="search" placeholder="Buscar ofertas" autocomplete="off">
+        </label>
+      </section>
+
+      <section id="offer-grid" class="offer-grid" aria-live="polite">
+        <div class="empty"><span class="loader"></span><h2>Buscando ofertas</h2><p>Un momento…</p></div>
+      </section>
+    </main>
+
+    <div id="modal-backdrop" class="modal-backdrop" hidden>
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="edit-title">
+        <button class="modal-close" type="button" aria-label="Cerrar">×</button>
+        <p class="eyebrow">PREPARAR PUBLICACIÓN</p>
+        <h2 id="edit-title">Revisa antes de enviar</h2>
+        <p class="modal-intro">Añade el enlace creado en la Central de Afiliados de Mercado Libre y ajusta el mensaje si lo deseas.</p>
+        <label>Enlace oficial de afiliado
+          <input id="affiliate-url" type="url" placeholder="https://mercadolibre.com/sec/…">
+        </label>
+        <label>Mensaje para WhatsApp
+          <textarea id="message" rows="10"></textarea>
+        </label>
+        <div class="modal-actions">
+          <button class="secondary cancel-edit" type="button">Cancelar</button>
+          <button class="primary save-edit" type="button">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"></path></svg>
+            Guardar publicación
+          </button>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
